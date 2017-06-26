@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="ActualizarPartido" method="POST">
+		<!-- id sirve para llamar al input desde JS y name para llamarlo desde el Servlet con el POST -->
+		<label for="goll">Goles Local</label>
+		<input type="text" id="goll" name="goll" size="3" /><br />
+		<label for="golv">Goles Visitante</label>
+		<input type="text" id="golv" name="golv" size="3" /><br />		
+		<label for="minuto">Minuto</label>
+		<input type="text" id="minuto" name="minuto" size="3" /><br />	
+		<label for="comentario">Comentario</label><br />
+		<textarea cols="60" rows="10" id="comentario" name="comentario"></textarea>
+		<input type="submit" value="Actualizar" />
+	</form>
+</body>
+</html>
