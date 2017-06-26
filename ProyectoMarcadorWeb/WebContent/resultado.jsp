@@ -32,8 +32,12 @@
 				//Habremos recibido un Json
 				console.log(xmlHttp.responseText);
 				var infojson = JSON.parse(xmlHttp.responseText);
-				alert("Goles Visitante" + infojson.marcador.goles_visitante);
-				alert("Goles Locales" + infojson.marcador.goles_local);
+				//alert("Goles Visitante" + infojson.marcador.goles_visitante);
+				//alert("Goles Locales" + infojson.marcador.goles_local);
+				var caja_local = document.getElementById("goleslocal");
+				var caja_visitante = document.getElementById("golesvisitante");
+				caja_local.innerHTML = infojson.marcador.goles_local;
+				caja_visitante.innerHTML = infojson.marcador.goles_visitante;
 			}
 		}
 	}
