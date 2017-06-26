@@ -32,12 +32,19 @@
 				//Habremos recibido un Json
 				console.log(xmlHttp.responseText);
 				var infojson = JSON.parse(xmlHttp.responseText);
-				//alert("Goles Visitante" + infojson.marcador.goles_visitante);
-				//alert("Goles Locales" + infojson.marcador.goles_local);
+
+				//Actualizamos el marcador
 				var caja_local = document.getElementById("goleslocal");
 				var caja_visitante = document.getElementById("golesvisitante");
 				caja_local.innerHTML = infojson.marcador.goles_local;
 				caja_visitante.innerHTML = infojson.marcador.goles_visitante;
+				
+				//Actualizamos los comentarios
+				var tabla = document.getElementById("tablacomentarios");
+				for(var i = 0; i < infojson.listacomentarios.length ; i++){
+					infojson.listacomentarios[i].minuto;
+					infojson.listacomentarios[i].comentario;
+				}
 			}
 		}
 	}
@@ -51,7 +58,7 @@
 	<div id="resultado"><h1>Resultado</h1></div>
 	<div class="goles" id="golesvisitante">${marcador.goles_visitante }</div>
 	<div id="comentarios">
-		<table>
+		<table id="tablacomentarios">
 			<th>Minuto</th>
 			<th>Comentario</th>
 			<tr>
