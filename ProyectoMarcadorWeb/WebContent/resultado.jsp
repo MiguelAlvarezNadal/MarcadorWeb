@@ -50,7 +50,7 @@
 					var tr_nueva = tabla.insertRow(1);
 					var td_min = tr_nueva.insertCell(0);
 					var td_comentario = tr_nueva.insertCell(1);
-					td_min.innerHTML = infojson.listacomentatios[i].minuto;
+					td_min.innerHTML = infojson.listacomentatios[i].minuto + "'";
 					td_comentario.innerHTML = infojson.listacomentatios[i].comentario;
 				}
 			}
