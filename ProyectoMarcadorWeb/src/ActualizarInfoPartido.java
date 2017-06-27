@@ -36,8 +36,9 @@ public class ActualizarInfoPartido extends HttpServlet {
 		//TODO Obtener la última información del partido y devolver un JSON de ella.
 		Marcador marcador_actual = ConsultarResultado.obtenerLastMarcador();
 		List<Comentario> lista_Comentarios_Actual = ConsultarResultado.getListaComentario();
+		String fotopartido = ConsultarResultado.obtenerUltimaFoto();
 		
-		InfoPartido infopartido = new InfoPartido(marcador_actual, lista_Comentarios_Actual);
+		InfoPartido infopartido = new InfoPartido(marcador_actual, lista_Comentarios_Actual, fotopartido);
 		
 		Gson gson = new Gson();
 		String infojson = gson.toJson(infopartido);

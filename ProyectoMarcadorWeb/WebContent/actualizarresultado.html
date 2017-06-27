@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="ActualizarPartido" method="POST">
+	<form action="ActualizarPartido" enctype="mulipart/form-data" method="POST">
 		<!-- id sirve para llamar al input desde JS y name para llamarlo desde el Servlet con el POST -->
 		<label for="goll">Goles Local</label>
 		<input type="text" id="goll" name="goll" size="3" /><br />
@@ -14,7 +14,9 @@
 		<label for="minuto">Minuto</label>
 		<input type="text" id="minuto" name="minuto" size="3" /><br />	
 		<label for="comentario">Comentario</label><br />
-		<textarea cols="60" rows="10" id="comentario" name="comentario"></textarea>
+		<textarea cols="60" rows="10" id="comentario" name="comentario"></textarea><br />
+		<label for="file">Imagen</label>
+		<input type="file" name="file" id="file" /><br />
 		<input type="submit" value="Actualizar" />
 	</form>
 </body>

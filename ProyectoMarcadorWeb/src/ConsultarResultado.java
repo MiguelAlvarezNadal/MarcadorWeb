@@ -20,13 +20,22 @@ public class ConsultarResultado extends HttpServlet {
 	private static List<Comentario> lista_comentarios = null;
 	private static Marcador  marcador = null;
 	private static Imagen imagen = null;
+	private static String fotopartido = null;
     
+	public static void actualizarFoto(String nueva_foto){
+		fotopartido = nueva_foto;
+	}
+	
 	public static void actualizarMarcador(Marcador marcador_nuevo){
 		marcador = marcador_nuevo;
 	}
 	
 	public static void actualizarComentarios(Comentario comentario_nuevo){
 		lista_comentarios.add(comentario_nuevo);
+	}
+	
+	public static String obtenerUltimaFoto(){
+		return fotopartido;
 	}
 	
 	public static Marcador obtenerLastMarcador(){
@@ -55,6 +64,7 @@ public class ConsultarResultado extends HttpServlet {
     	lista_comentarios.add(comentario);
     	
     	marcador = new Marcador(0, 0);
+    	fotopartido = "inicio.jpg";
     	imagen = new Imagen("inicio.jpg");  	
     }
     

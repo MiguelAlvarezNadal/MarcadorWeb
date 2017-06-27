@@ -53,6 +53,9 @@
 					td_min.innerHTML = infojson.listacomentatios[i].minuto + "'";
 					td_comentario.innerHTML = infojson.listacomentatios[i].comentario;
 				}
+				
+				var cajafoto = document.getElementById("fotopartido");
+				cajafoto.src = infojson.fotopartido;
 			}
 		}
 	}
@@ -60,7 +63,7 @@
 </head>
 <body onload="programarllamada()">
 	<div id="divfoto">
-		<img src="${imagen.ruta }" width="800" height="400" />
+		<img src="inicio.jpg" width="800" height="400" />
 	</div>
 	<div class="goles" id="goleslocal">${marcador.goles_local }</div>
 	<div id="resultado"><h1>Resultado</h1></div>
@@ -69,9 +72,11 @@
 		<table id="tablacomentarios">
 			<th>Minuto</th>
 			<th>Comentario</th>
+			<th>FOTO</th>
 			<tr>
 				<td>${comentario.minuto }'</td>
 				<td>${comentario.comentario }</td>
+				<td><img src="${imagen.ruta }" width="200" height="100"  id="fotopartido"/></td>
 			</tr>
 		</table>
 	</div>
