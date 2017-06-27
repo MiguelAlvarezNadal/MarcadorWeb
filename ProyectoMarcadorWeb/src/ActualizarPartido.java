@@ -50,6 +50,8 @@ public class ActualizarPartido extends HttpServlet {
 		int minuto_partido = Integer.parseInt(minuto);
 		Comentario comentario_nuevo = new Comentario(minuto_partido, comentario);
 		ConsultarResultado.actualizarComentarios(comentario_nuevo);
+		
+		request.getRequestDispatcher("actualizarresultado.html").forward(request, response);
 	}
 
 }

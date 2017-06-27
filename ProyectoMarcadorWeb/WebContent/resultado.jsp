@@ -12,7 +12,9 @@
 	#resultado{width:200px;padding-top:35px;padding-bottom:35px;float:left;margin-top:20px;text-align:center;}
 	img{margin-top:50px;}
 	#divfoto{text-align:center;}
-	table{margin:auto;width:800px;border:solid thin black;text-align:center;padding:20px;margin-top:200px;}
+	table{margin:auto;width:800px;text-align:center;padding:20px;margin-top:200px;}
+	th{border:solid thin black;padding:20px;}
+	td{padding:10px;}
 </style>
 <script>
 	function programarllamada(){
@@ -41,9 +43,15 @@
 				
 				//Actualizamos los comentarios
 				var tabla = document.getElementById("tablacomentarios");
-				for(var i = 0; i < infojson.listacomentarios.length ; i++){
-					infojson.listacomentarios[i].minuto;
-					infojson.listacomentarios[i].comentario;
+				while(tabla.rows.length > 1){//Recorro la tabla
+					tabla.deleteRow(1);//Borro las filas
+				}
+				for(var i = 0; i < infojson.listacomentatios.length; i++){	
+					var tr_nueva = tabla.insertRow(1);
+					var td_min = tr_nueva.insertCell(0);
+					var td_comentario = tr_nueva.insertCell(1);
+					td_min.innerHTML = infojson.listacomentatios[i].minuto;
+					td_comentario.innerHTML = infojson.listacomentatios[i].comentario;
 				}
 			}
 		}
